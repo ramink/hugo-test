@@ -3,6 +3,7 @@ backend:
   branch: main
   repo: ramink/hugo-test
   api_root: https://api.github.com
+  base_url: https://ex-proxy.raminkamal.workers.dev/
   auth_endpoint: /auth
 
 editor:
