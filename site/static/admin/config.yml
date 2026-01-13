@@ -1,0 +1,34 @@
+backend:
+  name: github
+  branch: main
+  repo: ramink/hugo-test
+  api_root: https://api.github.com
+  auth_endpoint: /auth
+
+editor:
+  preview: false
+
+media_folder: "site/static/uploads"
+public_folder: "site/uploads"
+
+collections:
+  - name: 'posts'
+    label: 'Posts'
+    label_singular: 'Post'
+    create: true
+    folder: 'site/content/posts'
+    format: toml-frontmatter
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - label: 'Title'
+        name: 'title'
+        widget: 'string'
+        hint: >
+          The URL for the post being created will be based on this title (with
+          unsafe characters replaced) and preceded by date information. When
+          linking to this page, keep that URL in mind. Note: changing the title
+          of the post in this editor will not change the URL once the post has
+          been created.  But you can ask your website manager to change it
+          manually.
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
