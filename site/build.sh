@@ -16,6 +16,7 @@ main() {
 
   # Build the site
   echo "Building the site..."
+  echo 'hugo --gc --minify --baseURL "'$BASE_URL'"'
   hugo --gc --minify --baseURL "$BASE_URL"
 
   echo "Listing resulting public files:"
