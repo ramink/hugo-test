@@ -8,16 +8,14 @@
 #------------------------------------------------------------------------------
 
 main() {
-  BASE_URL="https://hugo-qtest.pages.dev"
-
   echo "Listing content files:"
   echo "-----------------------------------------------------------------"
   find content -print
 
   # Build the site
   echo "Building the site..."
-  echo 'hugo --gc --minify --baseURL "'$BASE_URL'"'
-  hugo --gc --minify --baseURL "$BASE_URL"
+  echo 'hugo --gc --minify'
+  hugo --gc --minify
 
   echo "Listing resulting public files:"
   echo "-----------------------------------------------------------------"
